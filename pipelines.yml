@@ -1,9 +1,9 @@
 pipelines:
   - name: langTests
     steps:
-      - name: u16_nodejs10_16_0
-        type: Bash
-        configuration:
+#       - name: u16_nodejs10_16_0
+#         type: Bash
+#         configuration:
      #     nodePool: ubuntu16
 #           runtime:
 #             type: image
@@ -16,8 +16,8 @@ pipelines:
 #                 name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18cpp
 #                 tag: 0.9.1
 #                 autoPull: true
-        execution:
-          - echo "hi"
+#         execution:
+#           - echo "hi"
 #           onExecute:
 #             - gcc --version
 #             - clang --version
@@ -80,24 +80,24 @@ pipelines:
 #      #       - node --version
 #       #      - docker images
             
-#       - name: u16_nodejs_default
-#         type: Bash
-#         configuration:
-#          # nodePool: ubuntu16
+      - name: u16_nodejs_default
+        type: Bash
+        configuration:
+         # nodePool: ubuntu16
 #           inputSteps:
 #             - name: u16_nodejs8_16_0
-#           runtime:
-#             type: image
-#             image:
-#               custom:
-#                 name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18node
-#                 tag: 0.9.1
-#                 autoPull: true
-#         execution:
-#           onExecute:
-#             - nvm list
-#             - jfrog --version
-#             - kubectl version --client
+          runtime:
+            type: image
+            image:
+              custom:
+                name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18node
+                tag: 0.9.1
+                autoPull: true
+        execution:
+          onExecute:
+            - nvm list
+            - jfrog --version
+            - kubectl version --client
             
 #   #        runtime:
 #    #         type: image
@@ -120,8 +120,7 @@ pipelines:
         configuration:
         #  nodePool: ubuntu16
           inputSteps:
-            -  u16_nodejs10_16_0
-#             - name: u16_nodejs_default
+#           - name: u16_nodejs_default
           runtime:
             type: image
             image:
