@@ -82,7 +82,7 @@ pipelines:
          # nodePool: ubuntu16
           inputSteps:
             - name: u16_nodejs8_16_0
-           runtime:
+          runtime:
             type: image
             image:
               custom:
