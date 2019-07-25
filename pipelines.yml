@@ -119,7 +119,7 @@ pipelines:
         type: Bash
         configuration:
         #  nodePool: ubuntu16
-          inputSteps:
+#           inputSteps:
 #           - name: u16_nodejs_default
           runtime:
             type: image
