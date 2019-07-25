@@ -134,7 +134,7 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
-            - javac -vesrion
+            - java -vesrion
             - jfrog --version
             - kubectl version --client
             
