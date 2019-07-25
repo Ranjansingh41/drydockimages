@@ -18,6 +18,8 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
+            - gcc --version
+            - clang --version
             - jfrog --version
             - kubectl version --client
             
@@ -56,6 +58,7 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
+            - gvm list
             - jfrog --version
             - kubectl version --client
           
@@ -91,6 +94,7 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
+            - nvm list
             - jfrog --version
             - kubectl version --client
             
@@ -129,6 +133,7 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
+            - java --vesrion
             - jfrog --version
             - kubectl version --client
             
