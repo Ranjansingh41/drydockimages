@@ -58,7 +58,7 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
-            - gvm list
+            - node --version
             - jfrog --version
             - kubectl version --client
           
