@@ -1,10 +1,10 @@
 pipelines:
   - name: langTests
     steps:
-#       - name: u16_nodejs10_16_0
-#         type: Bash
-#         configuration:
-#      #     nodePool: ubuntu16
+      - name: u16_nodejs10_16_0
+        type: Bash
+        configuration:
+     #     nodePool: ubuntu16
 #           runtime:
 #             type: image
 #             image:
@@ -16,7 +16,8 @@ pipelines:
 #                 name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18cpp
 #                 tag: 0.9.1
 #                 autoPull: true
-#         execution:
+        execution:
+          - echo "hi"
 #           onExecute:
 #             - gcc --version
 #             - clang --version
@@ -119,6 +120,7 @@ pipelines:
         configuration:
         #  nodePool: ubuntu16
           inputSteps:
+            -  u16_nodejs10_16_0
 #             - name: u16_nodejs_default
           runtime:
             type: image
