@@ -58,7 +58,7 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
-            - node --version
+#             - node --version
             - jfrog --version
             - kubectl version --client
           
