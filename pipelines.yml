@@ -13,7 +13,7 @@ pipelines:
 #                 versions:
 #                   - 10.15.3
                     custom:
-                      name: pipelines-docker.jfrog.io/jfrog/pipelines-c7node
+                      name: pipelines-docker.jfrog.io/jfrog/pipelines-c7go
                       tag: 0.9.1
                       autoPull: false
         execution:
@@ -21,9 +21,9 @@ pipelines:
             - printenv
             - kubectl version --client
             - jfrog --version
-            - node --version
+#             - node --version
             - docker images
-#             - go version
+            - go version
 #       - name: u16_nodejs8_16_0
 #         type: Bash
 #         configuration:
