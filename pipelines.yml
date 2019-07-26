@@ -8,13 +8,13 @@ pipelines:
           runtime:
             type: image
             image:
-              auto:
-                language: nodejs
-                versions:
-                  - 10.15.3
-                    #custom:
-              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-              #  tag: 0.9.0 #master #
+#               auto:
+#                 language: nodejs
+#                 versions:
+#                   - 10.15.3
+                    custom:
+               name: pipelines-docker.jfrog.io/jfrog/pipelines-u18node
+               tag: 0.9.1 #master #
         execution:
           onExecute:
             - printenv
@@ -31,19 +31,19 @@ pipelines:
           runtime:
             type: image
             image:
-              auto:
-                language: nodejs
-                versions:
-                  - 8.16.0
-                    #custom:
-              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-              #  tag: 0.9.0 #master #
+#               auto:
+#                 language: nodejs
+#                 versions:
+#                   - 8.16.0
+                    custom:
+               name: pipelines-docker.jfrog.io/jfrog/pipelines-u18go
+               tag: 0.9.0 #master #
         execution:
           onExecute:
             - printenv
             - kubectl version --client
             - jfrog --version
-            - node --version
+            - gvm list
             - docker images
       - name: u16_nodejs_default
         type: Bash
@@ -190,15 +190,15 @@ pipelines:
           inputSteps:
             - name: u16_go_1_12_5
           runtime:
-            type: image
-            image:
-              auto:
-                language: go
+#             type: image
+#             image:
+#               auto:
+#                 language: go
                 #versions:
-                  #    - 1.12.5
-                    #custom:
-              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-              #  tag: 0.9.0 #master #
+                     - 1.12.5
+                    custom:
+               name: pipelines-docker.jfrog.io/jfrog/pipelines-c7go
+               tag: 0.9.1 #master #
         execution:
           onExecute:
             - printenv
