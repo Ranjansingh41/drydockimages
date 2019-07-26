@@ -18,6 +18,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - node --version
             - docker images
       - name: u16_nodejs8_16_0
@@ -39,6 +41,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - node --version
             - docker images
       - name: u16_nodejs_default
@@ -60,6 +64,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - node --version
             - docker images
       - name: u16_java_openjdk8
@@ -81,6 +87,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - java -version
             - docker images
       - name: u16_java_openjdk11
@@ -102,6 +110,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - java -version
             - docker images
       - name: u16_java_default
@@ -123,6 +133,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - java -version
             - docker images
       - name: u16_go_1_11_10
@@ -144,6 +156,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - go version
             - docker images
       - name: u16_go_1_12_5
@@ -165,6 +179,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - go version
             - docker images
       - name: u16_go_default
@@ -186,6 +202,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - go version
             - docker images
       - name: u16_cpp_default
@@ -207,6 +225,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            - kubectl version --client
+            - jfrog --version
             - clang --version
             - gcc --version
             - docker images
