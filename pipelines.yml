@@ -4,46 +4,26 @@ pipelines:
       - name: u16_nodejs10_16_0
         type: Bash
         configuration:
-#          nodePool: ubuntu16
+#           nodePool: ubuntu16
           runtime:
             type: image
             image:
               auto:
                 language: nodejs
                 versions:
-                  - 10.15.3
-#               custom:
-#                 name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18cpp
-#                 tag: 0.9.1
-#                 autoPull: true
-        execution:
-#           - echo "hi"
-          onExecute:
-#             - gcc --version
-#             - clang --version
-            - jfrog --version
-            - kubectl version --client
-            
-   #       runtime:
-    #        type: image
-     #       image:
-      #        auto:
-       #         language: nodejs
-        #        versions:
-         #         - 10.16.0
-          #          custom:
+                  - 10.16.0
+                    #custom:
               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
               #  tag: 0.9.0 #master #
-#        execution:
- #         onExecute:
-  #          - printenv
-   #         - node --version
-    #        - docker images
-            
+        execution:
+          onExecute:
+            - printenv
+            - node --version
+            - docker images
       - name: u16_nodejs8_16_0
         type: Bash
         configuration:
-      #    nodePool: ubuntu16
+#           nodePool: ubuntu16
           inputSteps:
             - name: u16_nodejs10_16_0
           runtime:
@@ -53,239 +33,183 @@ pipelines:
                 language: nodejs
                 versions:
                   - 8.16.0
-#               custom:
-#                 name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18go
-#                 tag: 0.9.1
-#                 autoPull: true
-        execution:
-          onExecute:
-#             - node --version
-            - jfrog --version
-            - kubectl version --client
-          
-          
-  #        runtime:
-   #         type: image
-    #        image:
-     #         auto:
-      #          language: nodejs
-       #         versions:
-        #          - 8.16.0
                     #custom:
               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
               #  tag: 0.9.0 #master #
-  #      execution:
-   #       onExecute:
-    #        - printenv
-     #       - node --version
-      #      - docker images
-            
+        execution:
+          onExecute:
+            - printenv
+            - node --version
+            - docker images
       - name: u16_nodejs_default
         type: Bash
         configuration:
-         # nodePool: ubuntu16
-#           inputSteps:
-#             - name: u16_nodejs8_16_0
-#           runtime:
-#             type: image
-#             image:
-#               custom:
-#                 name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18node
-#                 tag: 0.9.1
-#                 autoPull: true
-#         execution:
-#           onExecute:
-#             - nvm list
-#             - jfrog --version
-#             - kubectl version --client
-            
-#          runtime:
-#            type: image
-#            image:
-#              auto:
-#                language: nodejs
-#                 # versions:
-#                   # - 8.16.0
-#                     #custom:
-#               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-#               #  tag: 0.9.0 #master #
-#        execution:
-#           - printenv
-#            - node --version
-#            - docker images
-    
-    
-#       - name: u16_java_openjdk8
-#         type: Bash
-#         configuration:
-#         #  nodePool: ubuntu16
-#           inputSteps:
-#           - name: u16_nodejs_default
-#           runtime:
-#             type: image
-#             image:
-# #               auto:
-# #                 language: nodejs
-# #                 versions:
-# #                   - 10.15.3
-#               custom:
-#                 name:  pipelines-docker.jfrog.io/jfrog/pipelines-u18java
-#                 tag: 0.9.1
-#                 autoPull: true
-#         execution:
-#           onExecute:
-#             - java -version
-#             - jfrog --version
-#             - kubectl version --client
-            
-        #  runtime:
-        #    type: image
-        #    image:
-        #      auto:
-        #        language: java
-        #        versions:
-        #          - openjdk8
+#           nodePool: ubuntu16
+          inputSteps:
+            - name: u16_nodejs8_16_0
+          runtime:
+            type: image
+            image:
+              auto:
+                language: nodejs
+                # versions:
+                  # - 8.16.0
                     #custom:
               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
               #  tag: 0.9.0 #master #
-  #      execution:
-   #       onExecute:
-    #        - printenv
-     #       - java -version
-      #      - docker images
-      
-      
-      
-      
-     #################################### 
-            
-#       - name: u16_java_openjdk11
-#         type: Bash
-#         configuration:
+        execution:
+          onExecute:
+            - printenv
+            - node --version
+            - docker images
+      - name: u16_java_openjdk8
+        type: Bash
+        configuration:
 #           nodePool: ubuntu16
-#           inputSteps:
-#             - name: u16_java_openjdk8
-#           runtime:
-#             type: image
-#             image:
-#               auto:
-#                 language: java
-#                 versions:
-#                   - openjdk11
-#                     #custom:
-#               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-#               #  tag: 0.9.0 #master #
-#         execution:
-#           onExecute:
-#             - printenv
-#             - java -version
-#             - docker images
-#       - name: u16_java_default
-#         type: Bash
-#         configuration:
+          inputSteps:
+            - name: u16_nodejs_default
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - openjdk8
+                    #custom:
+              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
+              #  tag: 0.9.0 #master #
+        execution:
+          onExecute:
+            - printenv
+            - java -version
+            - docker images
+      - name: u16_java_openjdk11
+        type: Bash
+        configuration:
 #           nodePool: ubuntu16
-#           inputSteps:
-#             - name: u16_java_openjdk11
-#           runtime:
-#             type: image
-#             image:
-#               auto:
-#                 language: java
-#                 #versions:
-#                   # - openjdk8
-#                     #custom:
-#               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-#               #  tag: 0.9.0 #master #
-#         execution:
-#           onExecute:
-#             - printenv
-#             - java -version
-#             - docker images
-#       - name: u16_go_1_11_10
-#         type: Bash
-#         configuration:
+          inputSteps:
+            - name: u16_java_openjdk8
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - openjdk11
+                    #custom:
+              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
+              #  tag: 0.9.0 #master #
+        execution:
+          onExecute:
+            - printenv
+            - java -version
+            - docker images
+      - name: u16_java_default
+        type: Bash
+        configuration:
 #           nodePool: ubuntu16
-#           inputSteps:
-#             - name: u16_java_default
-#           runtime:
-#             type: image
-#             image:
-#               auto:
-#                 language: go
-#                 versions:
-#                   - 1.11.10
-#                     #custom:
-#               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-#               #  tag: 0.9.0 #master #
-#         execution:
-#           onExecute:
-#             - printenv
-#             - go version
-#             - docker images
-#       - name: u16_go_1_12_5
-#         type: Bash
-#         configuration:
+          inputSteps:
+            - name: u16_java_openjdk11
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                #versions:
+                  # - openjdk8
+                    #custom:
+              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
+              #  tag: 0.9.0 #master #
+        execution:
+          onExecute:
+            - printenv
+            - java -version
+            - docker images
+      - name: u16_go_1_11_10
+        type: Bash
+        configuration:
 #           nodePool: ubuntu16
-#           inputSteps:
-#             - name: u16_go_1_11_10
-#           runtime:
-#             type: image
-#             image:
-#               auto:
-#                 language: go
-#                 versions:
-#                   - 1.12.5
-#                     #custom:
-#               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-#               #  tag: 0.9.0 #master #
-#         execution:
-#           onExecute:
-#             - printenv
-#             - go version
-#             - docker images
-#       - name: u16_go_default
-#         type: Bash
-#         configuration:
+          inputSteps:
+            - name: u16_java_default
+          runtime:
+            type: image
+            image:
+              auto:
+                language: go
+                versions:
+                  - 1.11.10
+                    #custom:
+              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
+              #  tag: 0.9.0 #master #
+        execution:
+          onExecute:
+            - printenv
+            - go version
+            - docker images
+      - name: u16_go_1_12_5
+        type: Bash
+        configuration:
 #           nodePool: ubuntu16
-#           inputSteps:
-#             - name: u16_go_1_12_5
-#           runtime:
-#             type: image
-#             image:
-#               auto:
-#                 language: go
-#                 #versions:
-#                   #    - 1.12.5
-#                     #custom:
-#               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-#               #  tag: 0.9.0 #master #
-#         execution:
-#           onExecute:
-#             - printenv
-#             - go version
-#             - docker images
-#       - name: u16_cpp_default
-#         type: Bash
-#         configuration:
+          inputSteps:
+            - name: u16_go_1_11_10
+          runtime:
+            type: image
+            image:
+              auto:
+                language: go
+                versions:
+                  - 1.12.5
+                    #custom:
+              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
+              #  tag: 0.9.0 #master #
+        execution:
+          onExecute:
+            - printenv
+            - go version
+            - docker images
+      - name: u16_go_default
+        type: Bash
+        configuration:
 #           nodePool: ubuntu16
-#           inputSteps:
-#             - name: u16_go_default
-#           runtime:
-#             type: image
-#             image:
-#               auto:
-#                 language: c
-#                 #versions:
-#                   #    - 1.12.5
-#                     #custom:
-#               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
-#               #  tag: 0.9.0 #master #
-#         execution:
-#           onExecute:
-#             - printenv
-#             - clang --version
-#             - gcc --version
-#             - docker images
+          inputSteps:
+            - name: u16_go_1_12_5
+          runtime:
+            type: image
+            image:
+              auto:
+                language: go
+                #versions:
+                  #    - 1.12.5
+                    #custom:
+              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
+              #  tag: 0.9.0 #master #
+        execution:
+          onExecute:
+            - printenv
+            - go version
+            - docker images
+      - name: u16_cpp_default
+        type: Bash
+        configuration:
+#           nodePool: ubuntu16
+          inputSteps:
+            - name: u16_go_default
+          runtime:
+            type: image
+            image:
+              auto:
+                language: c
+                #versions:
+                  #    - 1.12.5
+                    #custom:
+              #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
+              #  tag: 0.9.0 #master #
+        execution:
+          onExecute:
+            - printenv
+            - clang --version
+            - gcc --version
+            - docker images
             
             
             
