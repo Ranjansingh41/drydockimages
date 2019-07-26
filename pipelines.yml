@@ -13,7 +13,7 @@ pipelines:
 #                 versions:
 #                   - 10.15.3
                     custom:
-                      name:  pipelines-docker.jfrog.io/jfrog/pipelines-c7node
+                      name:  pipelines-docker.jfrog.io/jfrog/pipelines-18node
                       tag: 0.9.1
                       autoPull: false
         execution:
@@ -23,6 +23,7 @@ pipelines:
             - jfrog --version
             - node --version
             - docker images
+#             - go version
 #       - name: u16_nodejs8_16_0
 #         type: Bash
 #         configuration:
@@ -184,29 +185,29 @@ pipelines:
 #             - jfrog --version
 #             - go version
 #             - docker images
-      - name: u16_go_default
-        type: Bash
-        configuration:
-#           nodePool: ubuntu16
-          inputSteps:
-            - name: u16_nodejs10_15_3
-          runtime:
-#             type: image
-#             image:
-#               auto:
-#                 language: go
-                #versions:
-#                      - 1.12.5
-                    custom:
-                      name: pipelines-docker.jfrog.io/jfrog/pipelines-c7go
-                      tag: 0.9.1 #master #
-        execution:
-          onExecute:
-            - printenv
-            - kubectl version --client
-            - jfrog --version
-            - go version
-            - docker images
+#       - name: u16_go_default
+#         type: Bash
+#         configuration:
+# #           nodePool: ubuntu16
+#           inputSteps:
+#             - name: u16_nodejs10_15_3
+#           runtime:
+# #             type: image
+# #             image:
+# #               auto:
+# #                 language: go
+#                 #versions:
+# #                      - 1.12.5
+#                     custom:
+#                       name: pipelines-docker.jfrog.io/jfrog/pipelines-c7go
+#                       tag: 0.9.1 #master #
+#         execution:
+#           onExecute:
+#             - printenv
+#             - kubectl version --client
+#             - jfrog --version
+#             - go version
+#             - docker images
 #       - name: u16_cpp_default
 #         type: Bash
 #         configuration:
