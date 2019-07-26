@@ -1,7 +1,7 @@
 pipelines:
   - name: langTests
     steps:
-      - name: u16_nodejs10_16_0
+      - name: u16_nodejs10_15_3
         type: Bash
         configuration:
 #           nodePool: ubuntu16
@@ -11,7 +11,7 @@ pipelines:
               auto:
                 language: nodejs
                 versions:
-                  - 10.16.0
+                  - 10.15.3
                     #custom:
               #  name: pipelines-docker.jfrog.io/jfrog/pipelines-u16go
               #  tag: 0.9.0 #master #
