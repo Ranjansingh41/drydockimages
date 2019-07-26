@@ -25,7 +25,7 @@ pipelines:
         configuration:
 #           nodePool: ubuntu16
           inputSteps:
-            - name: u16_nodejs10_16_0
+            - name: u16_nodejs10_15_3
           runtime:
             type: image
             image:
