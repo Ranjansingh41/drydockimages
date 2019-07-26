@@ -13,8 +13,9 @@ pipelines:
 #                 versions:
 #                   - 10.15.3
                     custom:
-               name: pipelines-docker.jfrog.io/jfrog/pipelines-u18node
-               tag: 0.9.1 #master #
+                      name:  pipelines-docker.jfrog.io/jfrog/pipelines-c7node
+                      tag: 0.9.1
+                      autoPull: false
         execution:
           onExecute:
             - printenv
@@ -197,8 +198,8 @@ pipelines:
                 #versions:
 #                      - 1.12.5
                     custom:
-               name: pipelines-docker.jfrog.io/jfrog/pipelines-c7go
-               tag: 0.9.1 #master #
+                      name: pipelines-docker.jfrog.io/jfrog/pipelines-c7go
+                      tag: 0.9.1 #master #
         execution:
           onExecute:
             - printenv
